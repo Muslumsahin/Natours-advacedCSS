@@ -1,0 +1,56 @@
+.btn {
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block; /* Bunu eklemediğimiz zaman üste kayıyor ve alan ihlali yapıyor*/
+      border-radius: 3rem;
+      transition: all 0.2s; /* Burada tüm aşağıdaki transformları seçtik ve animasyonlara süre ekleyerek hoş bir geçiş elde ettik*/
+      position: relative;
+    }
+  
+    &--white {
+      background-color: $color-white;
+      color: $color-gray-dark;
+  
+      &:hover {
+        transform: translateY(
+          -3px
+        ); /*Üzerine geldiğimizde y ekseninde - verdiğimiz için yukarı çıktı*/
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      }
+  
+      &:active {
+        transform: translateY(
+          -1px
+        ); /* Tıklandığı zaman bulunduğu -3px'den -1 asağı inde yine y ekseninde*/
+        box-shadow: 0 2px 20px rgba($color-black, 0.2); /* Y ekseninde 2px'le çektik böylelikle gerçek bir button'a basılıyor gibi bir his verdi*/
+      }
+      &::after {
+        background-color: $color-white;
+      }
+    }
+  
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 3rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.3s;
+    }
+  
+    &:hover::after {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    &--animated {
+      animation-name: moveInBottom;
+      animation-duration: 2s;
+    }
+  }

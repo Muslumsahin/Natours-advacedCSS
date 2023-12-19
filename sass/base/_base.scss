@@ -1,0 +1,11 @@
+html {
+    font-size: 62.5%; /* varsayılan font-size:16px biz de 10px yapmak isiyoruz. 10/16 yaptık .625 çıktı bunun yüzde olarak yazarsak 62.5%*/
+  }
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
