@@ -1,0 +1,5 @@
+.section-about{
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh; // header.scss de .header height'i 95vh clip-path 75vh idi aradaki boşluğu -20vh vererek aldık.
+}
