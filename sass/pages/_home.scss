@@ -3,3 +3,20 @@
     padding: 25rem 0;
     margin-top: -20vh; // header.scss de .header height'i 95vh clip-path 75vh idi aradaki boşluğu -20vh vererek aldık.
 }
+
+.section-features{
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(/img/nat-4.jpg);
+      background-size: cover;
+      transform: skewY(-7deg); // Burada bi trick yaptık fakat **clip-path** şeklinde de yapabiliriz.
+      margin-top: -12rem; 
+
+      & > *{ // tüm child elementlerden seçtik
+        transform: skewY(7deg);
+      }
+}
